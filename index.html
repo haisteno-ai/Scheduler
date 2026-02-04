@@ -14,89 +14,99 @@
         }
 
         :root {
-            --jsu-red: #DC143C;
+            --jsu-red: #CC0033;
+            --jsu-red-dark: #9B0026;
             --jsu-white: #FFFFFF;
             --jsu-gray: #4A4A4A;
             --jsu-light-gray: #F5F5F5;
             --jsu-dark: #1a1a1a;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.15);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.2);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #CC0033 0%, #7A001F 100%);
             min-height: 100vh;
-            padding: 20px;
-            padding-bottom: 100px;
+            padding: 16px;
+            padding-bottom: 80px;
         }
 
         .container {
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
         .header {
             background: white;
-            border-radius: 20px;
-            padding: 20px;
+            border-radius: 24px;
+            padding: 24px;
             margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            border-top: 5px solid var(--jsu-red);
+            box-shadow: var(--shadow-lg);
+            border-top: 6px solid var(--jsu-red);
         }
 
         .logo-section {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         h1 {
             color: var(--jsu-red);
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 900;
-            letter-spacing: -0.5px;
+            letter-spacing: -1px;
+            text-transform: uppercase;
         }
 
         .gamecock-badge {
             background: var(--jsu-red);
             color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
+            padding: 8px 16px;
+            border-radius: 24px;
+            font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .current-time {
-            font-size: 32px;
-            font-weight: bold;
+            font-size: 48px;
+            font-weight: 800;
             color: var(--jsu-dark);
-            margin-bottom: 5px;
+            margin-bottom: 4px;
+            font-variant-numeric: tabular-nums;
         }
 
         .current-date {
             font-size: 16px;
             color: #666;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .building-selector {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         .building-btn {
-            flex: 1;
-            padding: 12px;
+            padding: 14px;
             border: 2px solid #e0e0e0;
-            border-radius: 12px;
+            border-radius: 14px;
             background: white;
             color: #666;
             font-size: 15px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .building-btn.active {
@@ -104,186 +114,210 @@
             color: white;
             border-color: var(--jsu-red);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+            box-shadow: 0 4px 12px rgba(204, 0, 51, 0.4);
         }
 
         .day-selector {
             display: flex;
             gap: 8px;
             overflow-x: auto;
-            padding: 5px 0;
-            margin-bottom: 15px;
+            padding: 4px 0;
+            margin-bottom: 16px;
+            scrollbar-width: none;
+        }
+
+        .day-selector::-webkit-scrollbar {
+            display: none;
         }
 
         .day-btn {
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: 2px solid #e0e0e0;
             border-radius: 12px;
             background: white;
             color: #666;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             white-space: nowrap;
-            transition: all 0.3s;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         .day-btn.active {
             background: var(--jsu-red);
             color: white;
             border-color: var(--jsu-red);
+            transform: scale(1.05);
         }
 
         .filters-section {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         .quick-filters {
             display: flex;
             gap: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             flex-wrap: wrap;
         }
 
         .filter-btn {
-            padding: 8px 16px;
+            padding: 10px 18px;
             border: 2px solid #e0e0e0;
-            border-radius: 20px;
+            border-radius: 24px;
             background: white;
             color: #666;
             font-size: 13px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .filter-btn.active {
             background: var(--jsu-dark);
             color: white;
             border-color: var(--jsu-dark);
+            transform: scale(1.05);
         }
 
         .view-toggle {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 16px;
         }
 
         .view-btn {
-            flex: 1;
-            padding: 10px;
+            padding: 12px;
             border: none;
             border-radius: 12px;
             background: #f0f0f0;
             color: #666;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 15px;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .view-btn.active {
             background: var(--jsu-dark);
             color: white;
+            transform: scale(1.02);
         }
 
         .room-search {
             width: 100%;
-            padding: 12px;
+            padding: 14px 16px;
             border: 2px solid #e0e0e0;
-            border-radius: 12px;
+            border-radius: 14px;
             font-size: 16px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s;
+        }
+
+        .room-search:focus {
+            outline: none;
+            border-color: var(--jsu-red);
         }
 
         .pinned-section {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         .section-title {
             font-size: 14px;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--jsu-red);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
         .rooms-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 14px;
             margin-bottom: 20px;
         }
 
         .room-card {
             background: white;
-            border-radius: 16px;
-            padding: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: var(--shadow-md);
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
+            border: 3px solid transparent;
         }
 
         .room-card:active {
-            transform: scale(0.95);
+            transform: scale(0.96);
         }
 
         .room-card.available {
-            border: 3px solid #4CAF50;
+            border-color: #10B981;
         }
 
         .room-card.occupied {
-            border: 3px solid var(--jsu-red);
+            border-color: var(--jsu-red);
         }
 
         .room-card.pinned {
-            border: 3px solid #FFD700;
-            background: linear-gradient(135deg, #FFFACD 0%, #FFFFFF 100%);
+            border-color: #F59E0B;
+            background: linear-gradient(135deg, #FEF3C7 0%, #FFFFFF 100%);
         }
 
         .pin-btn {
             position: absolute;
-            top: 8px;
-            right: 8px;
+            top: 10px;
+            right: 10px;
             background: none;
             border: none;
-            font-size: 18px;
+            font-size: 20px;
             cursor: pointer;
             padding: 4px;
             line-height: 1;
-            opacity: 0.3;
-            transition: all 0.3s;
+            opacity: 0.4;
+            transition: all 0.2s;
         }
 
         .pin-btn:hover, .pin-btn.pinned {
             opacity: 1;
+            transform: scale(1.1);
         }
 
         .room-number {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 28px;
+            font-weight: 900;
             color: var(--jsu-dark);
             margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
 
         .room-building {
             font-size: 11px;
             color: #999;
-            margin-bottom: 4px;
-            font-weight: 600;
+            margin-bottom: 6px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .room-status {
             font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 4px;
+            font-weight: 700;
+            margin-bottom: 6px;
             text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         .room-status.available {
-            color: #4CAF50;
+            color: #10B981;
         }
 
         .room-status.occupied {
@@ -291,15 +325,16 @@
         }
 
         .room-time {
-            font-size: 13px;
+            font-size: 14px;
             color: #666;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .room-course {
             font-size: 11px;
             color: #999;
-            margin-top: 4px;
+            margin-top: 6px;
+            line-height: 1.3;
         }
 
         .modal {
@@ -309,7 +344,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(4px);
             z-index: 1000;
             padding: 20px;
             overflow-y: auto;
@@ -324,108 +360,122 @@
 
         .modal-content {
             background: white;
-            border-radius: 20px;
-            padding: 24px;
+            border-radius: 24px;
+            padding: 28px;
             max-width: 500px;
             width: 100%;
             max-height: 80vh;
             overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
         .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .modal-title {
-            font-size: 28px;
-            font-weight: bold;
+            font-size: 32px;
+            font-weight: 900;
             color: var(--jsu-red);
+            letter-spacing: -0.5px;
         }
 
         .close-btn {
-            background: none;
+            background: #f0f0f0;
             border: none;
-            font-size: 32px;
-            color: #999;
+            font-size: 24px;
+            color: #666;
             cursor: pointer;
-            padding: 0;
-            width: 32px;
-            height: 32px;
-            line-height: 32px;
+            padding: 8px;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            transition: all 0.2s;
+        }
+
+        .close-btn:hover {
+            background: #e0e0e0;
+            transform: scale(1.1);
         }
 
         .schedule-item {
             background: #f8f9fa;
-            border-radius: 12px;
-            padding: 16px;
+            border-radius: 14px;
+            padding: 18px;
             margin-bottom: 12px;
-            border-left: 4px solid var(--jsu-red);
+            border-left: 5px solid var(--jsu-red);
         }
 
         .schedule-time {
             font-size: 18px;
-            font-weight: bold;
+            font-weight: 800;
             color: #333;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .schedule-course {
             font-size: 14px;
             color: #666;
+            font-weight: 500;
         }
 
         .calendar-export {
-            margin-top: 20px;
-            padding: 20px;
+            margin-top: 24px;
+            padding: 24px;
             background: var(--jsu-light-gray);
-            border-radius: 12px;
+            border-radius: 16px;
         }
 
         .calendar-title {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 800;
             color: var(--jsu-red);
-            margin-bottom: 15px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .duration-selector {
             display: flex;
             gap: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             flex-wrap: wrap;
         }
 
         .duration-btn {
-            padding: 8px 16px;
+            padding: 10px 18px;
             border: 2px solid var(--jsu-red);
-            border-radius: 20px;
+            border-radius: 24px;
             background: white;
             color: var(--jsu-red);
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .duration-btn.active {
             background: var(--jsu-red);
             color: white;
+            transform: scale(1.05);
         }
 
         .export-btn {
             width: 100%;
-            padding: 14px;
+            padding: 16px;
             border: none;
-            border-radius: 12px;
+            border-radius: 14px;
             background: var(--jsu-red);
             color: white;
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 800;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .export-btn:active {
@@ -434,9 +484,10 @@
 
         .no-classes {
             text-align: center;
-            padding: 40px 20px;
+            padding: 48px 20px;
             color: #999;
             font-size: 16px;
+            font-weight: 500;
         }
 
         .list-view {
@@ -449,47 +500,50 @@
 
         .list-room {
             background: white;
-            border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 14px;
+            box-shadow: var(--shadow-md);
             position: relative;
+            border: 3px solid transparent;
         }
 
         .list-room.pinned {
-            border: 3px solid #FFD700;
-            background: linear-gradient(135deg, #FFFACD 0%, #FFFFFF 100%);
+            border-color: #F59E0B;
+            background: linear-gradient(135deg, #FEF3C7 0%, #FFFFFF 100%);
         }
 
         .list-room-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .list-room-number {
-            font-size: 20px;
-            font-weight: bold;
+            font-size: 22px;
+            font-weight: 900;
             color: var(--jsu-dark);
+            letter-spacing: -0.5px;
         }
 
         .list-room-status {
             font-size: 12px;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 20px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 24px;
             text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         .list-room-status.available {
-            background: #e8f5e9;
-            color: #4CAF50;
+            background: #D1FAE5;
+            color: #059669;
         }
 
         .list-room-status.occupied {
-            background: #ffebee;
-            color: var(--jsu-red);
+            background: #FEE2E2;
+            color: #DC2626;
         }
 
         .list-schedule {
@@ -500,24 +554,35 @@
         .list-schedule-item {
             display: flex;
             justify-content: space-between;
-            padding: 8px 12px;
+            align-items: center;
+            padding: 10px 14px;
             background: #f8f9fa;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 13px;
         }
 
         .list-schedule-time {
-            font-weight: 600;
+            font-weight: 700;
             color: #333;
         }
 
         .list-schedule-course {
             color: #666;
+            font-weight: 500;
+            text-align: right;
         }
 
         @media (max-width: 400px) {
             .rooms-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .current-time {
+                font-size: 36px;
             }
         }
     </style>
@@ -526,7 +591,7 @@
     <div class="container">
         <div class="header">
             <div class="logo-section">
-                <h1>TSC SCHEDULER</h1>
+                <h1>TSC Scheduler</h1>
                 <div class="gamecock-badge">🐓 JSU</div>
             </div>
             <div class="current-time" id="currentTime">--:--</div>
@@ -535,6 +600,8 @@
             <div class="building-selector">
                 <button class="building-btn active" onclick="selectBuilding('Martin')">Martin</button>
                 <button class="building-btn" onclick="selectBuilding('Merrill')">Merrill</button>
+                <button class="building-btn" onclick="selectBuilding('McGee')">McGee</button>
+                <button class="building-btn" onclick="selectBuilding('Brewer')">Brewer</button>
             </div>
             
             <div class="day-selector" id="daySelector"></div>
@@ -570,7 +637,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="modal-title" id="modalTitle">Room 111</div>
-                <button class="close-btn" onclick="closeModal()">&times;</button>
+                <button class="close-btn" onclick="closeModal()">×</button>
             </div>
             <div id="modalSchedule"></div>
             <div class="calendar-export">
@@ -587,7 +654,7 @@
     </div>
 
     <script>
-        const SCHEDULE_DATA = {"Martin": {"Monday": {"111": [{"begin": 745, "end": 945, "course": "BY434"}, {"begin": 745, "end": 945, "course": "BY5034"}, {"begin": 1000, "end": 1100, "course": "BY406"}, {"begin": 1000, "end": 1100, "course": "BY5006"}, {"begin": 1345, "end": 1545, "course": "BY419"}, {"begin": 1345, "end": 1545, "course": "BY5019"}], "122": [{"begin": 845, "end": 945, "course": "BY322"}, {"begin": 1000, "end": 1100, "course": "BY324"}, {"begin": 1115, "end": 1215, "course": "BY283"}, {"begin": 1230, "end": 1330, "course": "BY122"}, {"begin": 1345, "end": 1445, "course": "BY283"}, {"begin": 1500, "end": 1630, "course": "BY101"}], "130": [{"begin": 845, "end": 945, "course": "BY264"}, {"begin": 1000, "end": 1100, "course": "BY263"}, {"begin": 1115, "end": 1215, "course": "BY263"}, {"begin": 1230, "end": 1330, "course": "BY123"}, {"begin": 1345, "end": 1445, "course": "BY121"}], "219": [{"begin": 845, "end": 945, "course": "PHS491"}, {"begin": 845, "end": 945, "course": "PHS5091"}, {"begin": 1000, "end": 1100, "course": "PHS371"}, {"begin": 1345, "end": 1545, "course": "PHS222"}, {"begin": 1900, "end": 2130, "course": "PHS371"}], "234": [{"begin": 845, "end": 945, "course": "PHS201"}, {"begin": 1000, "end": 1100, "course": "GY220"}, {"begin": 1115, "end": 1215, "course": "CY232"}, {"begin": 1230, "end": 1330, "course": "GL241"}, {"begin": 1345, "end": 1445, "course": "PHS201"}], "250": [{"begin": 845, "end": 945, "course": "BY443"}, {"begin": 845, "end": 945, "course": "BY5043"}, {"begin": 1000, "end": 1100, "course": "BY323"}, {"begin": 1115, "end": 1215, "course": "BY463"}, {"begin": 1115, "end": 1215, "course": "BY5063"}, {"begin": 1115, "end": 1215, "course": "CY463"}, {"begin": 1230, "end": 1330, "course": "BY419"}, {"begin": 1230, "end": 1330, "course": "BY5019"}], "307": [{"begin": 845, "end": 945, "course": "AN224"}, {"begin": 1000, "end": 1059, "course": "GL242"}, {"begin": 1115, "end": 1215, "course": "GY366"}, {"begin": 1345, "end": 1445, "course": "AN345"}, {"begin": 1900, "end": 2130, "course": "PHS371"}], "332": [{"begin": 845, "end": 945, "course": "CY363"}, {"begin": 1000, "end": 1100, "course": "CY450"}, {"begin": 1115, "end": 1215, "course": "GY250"}, {"begin": 1230, "end": 1330, "course": "GY251"}, {"begin": 1345, "end": 1445, "course": "BY123"}, {"begin": 1500, "end": 1630, "course": "CY231"}], "336": [{"begin": 845, "end": 945, "course": "BY121"}, {"begin": 1000, "end": 1100, "course": "BY101"}, {"begin": 1115, "end": 1215, "course": "BY101"}, {"begin": 1230, "end": 1330, "course": "BY102"}, {"begin": 1345, "end": 1445, "course": "BY102"}, {"begin": 1500, "end": 1630, "course": "BY472"}, {"begin": 1500, "end": 1630, "course": "BY5072"}], "224": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1230, "end": 1430, "course": "BY104"}, {"begin": 1500, "end": 1700, "course": "BY104"}], "228": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1230, "end": 1430, "course": "BY104"}], "319": [{"begin": 1000, "end": 1100, "course": "PHS202"}, {"begin": 1115, "end": 1215, "course": "PHS202"}, {"begin": 1230, "end": 1330, "course": "CY106"}, {"begin": 1230, "end": 1330, "course": "CY126"}], "321": [{"begin": 1000, "end": 1200, "course": "BY263"}, {"begin": 1230, "end": 1430, "course": "BY263"}, {"begin": 1500, "end": 1700, "course": "BY263"}], "105": [{"begin": 1100, "end": 1300, "course": "GL244"}, {"begin": 1345, "end": 1545, "course": "GY252"}, {"begin": 1730, "end": 1930, "course": "GY253"}], "203": [{"begin": 1115, "end": 1215, "course": "BY340"}, {"begin": 1615, "end": 1915, "course": "GIS420"}, {"begin": 1615, "end": 1915, "course": "GIS5220"}], "309": [{"begin": 1230, "end": 1430, "course": "BY373"}], "327": [{"begin": 1230, "end": 1430, "course": "BY264"}, {"begin": 1500, "end": 1700, "course": "BY264"}], "202": [{"begin": 1300, "end": 1400, "course": "SSC101"}], "102": [{"begin": 1500, "end": 1630, "course": "BY293"}]}, "Tuesday": {"122": [{"begin": 730, "end": 900, "course": "BY264"}, {"begin": 915, "end": 1045, "course": "BY102"}, {"begin": 1245, "end": 1415, "course": "BY332"}, {"begin": 1430, "end": 1600, "course": "BY264"}], "130": [{"begin": 730, "end": 900, "course": "BY434"}, {"begin": 730, "end": 900, "course": "BY5034"}, {"begin": 915, "end": 1045, "course": "BY263"}, {"begin": 1100, "end": 1230, "course": "BY263"}, {"begin": 1245, "end": 1415, "course": "BY373"}, {"begin": 1430, "end": 1600, "course": "BY263"}], "217": [{"begin": 900, "end": 1100, "course": "PHS203"}, {"begin": 1115, "end": 1315, "course": "PHS203"}, {"begin": 1330, "end": 1530, "course": "PHS203"}], "111": [{"begin": 915, "end": 1115, "course": "BY434"}, {"begin": 915, "end": 1115, "course": "BY5034"}, {"begin": 1430, "end": 1630, "course": "BY332"}], "202": [{"begin": 915, "end": 1045, "course": "CY342"}, {"begin": 1115, "end": 1215, "course": "BY481"}, {"begin": 1115, "end": 1215, "course": "BY5081"}, {"begin": 1245, "end": 1415, "course": "CY411"}, {"begin": 1430, "end": 1600, "course": "GY304"}], "234": [{"begin": 915, "end": 1045, "course": "CY232"}, {"begin": 1400, "end": 1700, "course": "BY498"}, {"begin": 1400, "end": 1700, "course": "CY498"}], "250": [{"begin": 915, "end": 1045, "course": "BY106"}, {"begin": 1245, "end": 1415, "course": "BY373"}, {"begin": 1500, "end": 1630, "course": "BY5133"}], "319": [{"begin": 915, "end": 1045, "course": "CY105"}, {"begin": 915, "end": 1045, "course": "CY125"}, {"begin": 1245, "end": 1415, "course": "GY320"}, {"begin": 1430, "end": 1600, "course": "CY435"}], "327": [{"begin": 915, "end": 1045, "course": "BY260"}, {"begin": 1100, "end": 1300, "course": "BY260"}, {"begin": 1500, "end": 1700, "course": "BY264"}], "332": [{"begin": 915, "end": 1045, "course": "CY106"}, {"begin": 915, "end": 1045, "course": "CY126"}, {"begin": 1100, "end": 1230, "course": "CY105"}, {"begin": 1100, "end": 1230, "course": "CY125"}], "336": [{"begin": 915, "end": 1045, "course": "BY121"}, {"begin": 1245, "end": 1415, "course": "BY122"}, {"begin": 1430, "end": 1600, "course": "BY101"}], "224": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1230, "end": 1430, "course": "BY104"}, {"begin": 1500, "end": 1700, "course": "BY104"}, {"begin": 1715, "end": 1915, "course": "BY104"}], "228": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1230, "end": 1430, "course": "BY104"}], "219": [{"begin": 1100, "end": 1230, "course": "CY115"}, {"begin": 1430, "end": 1730, "course": "CY115"}], "307": [{"begin": 1100, "end": 1230, "course": "CY421"}, {"begin": 1430, "end": 1600, "course": "GY120"}], "321": [{"begin": 1230, "end": 1430, "course": "BY263"}, {"begin": 1500, "end": 1700, "course": "BY263"}, {"begin": 1715, "end": 1915, "course": "BY263"}], "203": [{"begin": 1300, "end": 1430, "course": "GY307"}, {"begin": 1445, "end": 1545, "course": "UH101"}, {"begin": 1630, "end": 1930, "course": "GIS5550"}, {"begin": 1630, "end": 1930, "course": "GY406"}], "105": [{"begin": 1400, "end": 1600, "course": "GY252"}], "142": [{"begin": 1430, "end": 1600, "course": "AN225"}]}, "Wednesday": {"111": [{"begin": 730, "end": 930, "course": "BY5775"}, {"begin": 1000, "end": 1100, "course": "BY406"}, {"begin": 1000, "end": 1100, "course": "BY5006"}, {"begin": 1345, "end": 1545, "course": "BY463"}, {"begin": 1345, "end": 1545, "course": "BY5063"}, {"begin": 1345, "end": 1545, "course": "CY463"}], "321": [{"begin": 730, "end": 930, "course": "BY263"}, {"begin": 1000, "end": 1200, "course": "BY263"}, {"begin": 1230, "end": 1430, "course": "BY263"}, {"begin": 1500, "end": 1700, "course": "BY263"}, {"begin": 1715, "end": 1915, "course": "BY263"}], "122": [{"begin": 845, "end": 945, "course": "BY322"}, {"begin": 1000, "end": 1100, "course": "BY324"}, {"begin": 1115, "end": 1215, "course": "BY283"}, {"begin": 1230, "end": 1330, "course": "BY122"}, {"begin": 1345, "end": 1445, "course": "BY283"}, {"begin": 1500, "end": 1630, "course": "BY101"}], "130": [{"begin": 845, "end": 945, "course": "BY264"}, {"begin": 1000, "end": 1100, "course": "BY263"}, {"begin": 1115, "end": 1215, "course": "BY263"}, {"begin": 1230, "end": 1330, "course": "BY123"}, {"begin": 1345, "end": 1445, "course": "BY121"}], "219": [{"begin": 845, "end": 945, "course": "PHS491"}, {"begin": 845, "end": 945, "course": "PHS5091"}, {"begin": 1000, "end": 1100, "course": "PHS371"}, {"begin": 1345, "end": 1545, "course": "PHS222"}], "234": [{"begin": 845, "end": 945, "course": "PHS201"}, {"begin": 1000, "end": 1100, "course": "GY220"}, {"begin": 1115, "end": 1215, "course": "CY232"}, {"begin": 1230, "end": 1330, "course": "GL241"}, {"begin": 1345, "end": 1445, "course": "PHS201"}], "250": [{"begin": 845, "end": 945, "course": "BY443"}, {"begin": 845, "end": 945, "course": "BY5043"}, {"begin": 1000, "end": 1100, "course": "BY323"}, {"begin": 1115, "end": 1215, "course": "BY463"}, {"begin": 1115, "end": 1215, "course": "BY5063"}, {"begin": 1115, "end": 1215, "course": "CY463"}, {"begin": 1230, "end": 1330, "course": "BY419"}, {"begin": 1230, "end": 1330, "course": "BY5019"}], "307": [{"begin": 845, "end": 945, "course": "AN224"}, {"begin": 1000, "end": 1059, "course": "GL242"}, {"begin": 1115, "end": 1215, "course": "GY366"}, {"begin": 1345, "end": 1445, "course": "AN345"}], "332": [{"begin": 845, "end": 945, "course": "CY363"}, {"begin": 1000, "end": 1100, "course": "CY450"}, {"begin": 1115, "end": 1215, "course": "GY250"}, {"begin": 1230, "end": 1330, "course": "GY251"}, {"begin": 1345, "end": 1445, "course": "BY123"}, {"begin": 1500, "end": 1630, "course": "CY231"}], "336": [{"begin": 845, "end": 945, "course": "BY121"}, {"begin": 1000, "end": 1100, "course": "BY101"}, {"begin": 1115, "end": 1215, "course": "BY101"}, {"begin": 1230, "end": 1330, "course": "BY102"}, {"begin": 1345, "end": 1445, "course": "BY102"}, {"begin": 1500, "end": 1630, "course": "BY472"}, {"begin": 1500, "end": 1630, "course": "BY5072"}], "217": [{"begin": 1000, "end": 1200, "course": "PHS203"}], "224": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1230, "end": 1430, "course": "BY104"}, {"begin": 1500, "end": 1700, "course": "BY104"}, {"begin": 1715, "end": 1915, "course": "BY104"}], "228": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1230, "end": 1430, "course": "BY108"}], "309": [{"begin": 1000, "end": 1200, "course": "BY373"}, {"begin": 1345, "end": 1545, "course": "BY373"}], "319": [{"begin": 1000, "end": 1100, "course": "PHS202"}, {"begin": 1115, "end": 1215, "course": "PHS202"}, {"begin": 1230, "end": 1330, "course": "CY106"}, {"begin": 1230, "end": 1330, "course": "CY126"}], "327": [{"begin": 1000, "end": 1200, "course": "BY264"}, {"begin": 1230, "end": 1430, "course": "BY264"}, {"begin": 1500, "end": 1700, "course": "BY264"}], "203": [{"begin": 1115, "end": 1215, "course": "BY340"}], "105": [{"begin": 1400, "end": 1600, "course": "GY252"}, {"begin": 1730, "end": 1930, "course": "GY253"}], "102": [{"begin": 1500, "end": 1630, "course": "BY293"}], "302": [{"begin": 1600, "end": 1900, "course": "GIS408"}, {"begin": 1600, "end": 1900, "course": "GIS5210"}]}, "Thursday": {"122": [{"begin": 730, "end": 900, "course": "BY264"}, {"begin": 915, "end": 1045, "course": "BY102"}, {"begin": 1245, "end": 1415, "course": "BY332"}, {"begin": 1430, "end": 1600, "course": "BY264"}], "130": [{"begin": 730, "end": 900, "course": "BY434"}, {"begin": 730, "end": 900, "course": "BY5034"}, {"begin": 915, "end": 1045, "course": "BY263"}, {"begin": 1100, "end": 1230, "course": "BY263"}, {"begin": 1245, "end": 1415, "course": "BY373"}, {"begin": 1430, "end": 1600, "course": "BY263"}], "321": [{"begin": 730, "end": 930, "course": "BY263"}, {"begin": 1000, "end": 1200, "course": "BY263"}, {"begin": 1230, "end": 1430, "course": "BY263"}, {"begin": 1500, "end": 1700, "course": "BY263"}], "105": [{"begin": 830, "end": 1030, "course": "GY253"}, {"begin": 1100, "end": 1300, "course": "GL243"}, {"begin": 1400, "end": 1600, "course": "GL243"}], "217": [{"begin": 900, "end": 1100, "course": "PHS204"}, {"begin": 1115, "end": 1315, "course": "PHS204"}, {"begin": 1330, "end": 1530, "course": "PHS204"}], "111": [{"begin": 915, "end": 1115, "course": "BY434"}, {"begin": 915, "end": 1115, "course": "BY5034"}, {"begin": 1430, "end": 1630, "course": "BY332"}], "202": [{"begin": 915, "end": 1045, "course": "CY342"}, {"begin": 1245, "end": 1415, "course": "CY411"}, {"begin": 1430, "end": 1600, "course": "GY304"}], "234": [{"begin": 915, "end": 1045, "course": "CY232"}, {"begin": 1400, "end": 1700, "course": "BY498"}, {"begin": 1400, "end": 1700, "course": "CY498"}], "250": [{"begin": 915, "end": 1045, "course": "BY106"}, {"begin": 1245, "end": 1415, "course": "BY373"}, {"begin": 1500, "end": 1630, "course": "BY5133"}], "319": [{"begin": 915, "end": 1045, "course": "CY105"}, {"begin": 915, "end": 1045, "course": "CY125"}, {"begin": 1245, "end": 1415, "course": "GY320"}, {"begin": 1430, "end": 1600, "course": "CY435"}], "327": [{"begin": 915, "end": 1045, "course": "BY260"}, {"begin": 1230, "end": 1430, "course": "BY264"}], "332": [{"begin": 915, "end": 1045, "course": "CY106"}, {"begin": 915, "end": 1045, "course": "CY126"}, {"begin": 1100, "end": 1230, "course": "CY105"}, {"begin": 1100, "end": 1230, "course": "CY125"}], "336": [{"begin": 915, "end": 1045, "course": "BY121"}, {"begin": 1245, "end": 1415, "course": "BY122"}, {"begin": 1430, "end": 1600, "course": "BY101"}], "224": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1500, "end": 1700, "course": "BY104"}], "228": [{"begin": 1000, "end": 1200, "course": "BY104"}], "219": [{"begin": 1100, "end": 1230, "course": "CY115"}], "307": [{"begin": 1100, "end": 1230, "course": "CY421"}, {"begin": 1430, "end": 1600, "course": "GY120"}], "203": [{"begin": 1300, "end": 1430, "course": "GY307"}, {"begin": 1630, "end": 1930, "course": "BY5110"}, {"begin": 1630, "end": 1930, "course": "GIS5510"}], "142": [{"begin": 1430, "end": 1600, "course": "AN225"}], "302": [{"begin": 1630, "end": 1930, "course": "GIS5560"}]}, "Friday": {"111": [{"begin": 730, "end": 930, "course": "BY406"}, {"begin": 730, "end": 930, "course": "BY5006"}, {"begin": 1000, "end": 1100, "course": "BY406"}, {"begin": 1000, "end": 1100, "course": "BY5006"}], "122": [{"begin": 845, "end": 945, "course": "BY322"}, {"begin": 1000, "end": 1100, "course": "BY324"}, {"begin": 1115, "end": 1215, "course": "BY283"}, {"begin": 1230, "end": 1330, "course": "BY122"}, {"begin": 1345, "end": 1445, "course": "BY283"}], "130": [{"begin": 845, "end": 945, "course": "BY264"}, {"begin": 1000, "end": 1100, "course": "BY263"}, {"begin": 1115, "end": 1215, "course": "BY263"}, {"begin": 1230, "end": 1330, "course": "BY123"}, {"begin": 1345, "end": 1445, "course": "BY121"}], "219": [{"begin": 845, "end": 945, "course": "PHS491"}, {"begin": 845, "end": 945, "course": "PHS5091"}, {"begin": 1000, "end": 1100, "course": "PHS371"}, {"begin": 1345, "end": 1545, "course": "PHS222"}], "234": [{"begin": 845, "end": 945, "course": "PHS201"}, {"begin": 1000, "end": 1100, "course": "GY220"}, {"begin": 1115, "end": 1215, "course": "CY232"}, {"begin": 1230, "end": 1330, "course": "GL241"}, {"begin": 1345, "end": 1445, "course": "PHS201"}], "250": [{"begin": 845, "end": 945, "course": "BY443"}, {"begin": 845, "end": 945, "course": "BY5043"}, {"begin": 1000, "end": 1100, "course": "BY323"}, {"begin": 1115, "end": 1215, "course": "BY463"}, {"begin": 1115, "end": 1215, "course": "BY5063"}, {"begin": 1115, "end": 1215, "course": "CY463"}, {"begin": 1230, "end": 1330, "course": "BY419"}, {"begin": 1230, "end": 1330, "course": "BY5019"}], "307": [{"begin": 845, "end": 945, "course": "AN224"}, {"begin": 1000, "end": 1059, "course": "GL242"}, {"begin": 1115, "end": 1215, "course": "GY366"}, {"begin": 1345, "end": 1445, "course": "AN345"}], "332": [{"begin": 845, "end": 945, "course": "CY363"}, {"begin": 1000, "end": 1100, "course": "CY450"}, {"begin": 1115, "end": 1215, "course": "GY250"}, {"begin": 1230, "end": 1330, "course": "GY251"}, {"begin": 1345, "end": 1445, "course": "BY123"}], "336": [{"begin": 845, "end": 945, "course": "BY121"}, {"begin": 1000, "end": 1100, "course": "BY101"}, {"begin": 1115, "end": 1215, "course": "BY101"}, {"begin": 1230, "end": 1330, "course": "BY102"}, {"begin": 1345, "end": 1445, "course": "BY102"}], "319": [{"begin": 1000, "end": 1100, "course": "PHS202"}, {"begin": 1115, "end": 1215, "course": "PHS202"}, {"begin": 1230, "end": 1330, "course": "CY106"}, {"begin": 1230, "end": 1330, "course": "CY126"}], "216": [{"begin": 1100, "end": 1159, "course": "BY5101"}], "203": [{"begin": 1115, "end": 1215, "course": "BY340"}], "105": [{"begin": 1345, "end": 1545, "course": "GL244"}]}}, "Merrill": {"Monday": {"B01": [{"begin": 730, "end": 830, "course": "EC 222 ALVAREZ"}, {"begin": 845, "end": 945, "course": "COM 200 STEWART"}, {"begin": 915, "end": 1045, "course": "AE 486 GODBEY"}], "B18": [{"begin": 730, "end": 830, "course": "COM 380 MURPHY"}, {"begin": 845, "end": 945, "course": "COM 400 MURPHY"}, {"begin": 1000, "end": 1100, "course": "COM 304 JOYCE"}, {"begin": 1630, "end": 1800, "course": "AE 252 QUADER"}], "100": [{"begin": 730, "end": 830, "course": "ST 345 LOWE"}, {"begin": 845, "end": 945, "course": "ST 260 LOWE"}, {"begin": 1000, "end": 1100, "course": "FIN 441 BOOZER"}], "105": [{"begin": 730, "end": 830, "course": "CBA 350 WALKER"}, {"begin": 845, "end": 945, "course": "COM 345 STEWART"}], "109": [{"begin": 730, "end": 830, "course": "EC 487 ALVAREZ"}], "115": [{"begin": 730, "end": 830, "course": "MKT 361 SCIUCHETTI"}, {"begin": 845, "end": 945, "course": "MKT 488 SCIUCHETTI"}], "116": [{"begin": 730, "end": 830, "course": "CBA 390 LU"}], "200": [{"begin": 845, "end": 945, "course": "ST 261 TURLEY"}, {"begin": 1000, "end": 1100, "course": "EC 321 ALVAREZ"}], "B10": [{"begin": 1245, "end": 1415, "course": "AE 344 KOCHAN"}, {"begin": 1630, "end": 1800, "course": "PSC 484 HATHAWAY/ISLAM"}], "B02": [{"begin": 1630, "end": 1800, "course": "MKT 492 HATHAWAY"}], "B15": [{"begin": 1630, "end": 1800, "course": "GY 466 SCIUCHETTI"}], "214": [{"begin": 730, "end": 830, "course": "COM 362 JOYCE"}], "218": [{"begin": 730, "end": 830, "course": "SSC 101 HANVEY"}]}, "Tuesday": {}, "Wednesday": {"B01": [{"begin": 730, "end": 830, "course": "EC 222 ALVAREZ"}, {"begin": 845, "end": 945, "course": "COM 200 STEWART"}, {"begin": 915, "end": 1045, "course": "AE 486 GODBEY"}], "B18": [{"begin": 730, "end": 830, "course": "COM 380 MURPHY"}, {"begin": 845, "end": 945, "course": "COM 400 MURPHY"}, {"begin": 1000, "end": 1100, "course": "COM 304 JOYCE"}, {"begin": 1630, "end": 1800, "course": "AE 252 QUADER"}], "100": [{"begin": 730, "end": 830, "course": "ST 345 LOWE"}, {"begin": 845, "end": 945, "course": "ST 260 LOWE"}, {"begin": 1000, "end": 1100, "course": "FIN 441 BOOZER"}], "105": [{"begin": 730, "end": 830, "course": "CBA 350 WALKER"}, {"begin": 845, "end": 945, "course": "COM 345 STEWART"}], "109": [{"begin": 730, "end": 830, "course": "EC 487 ALVAREZ"}], "115": [{"begin": 730, "end": 830, "course": "MKT 361 SCIUCHETTI"}, {"begin": 845, "end": 945, "course": "MKT 488 SCIUCHETTI"}], "116": [{"begin": 730, "end": 830, "course": "CBA 390 LU"}], "200": [{"begin": 845, "end": 945, "course": "ST 261 TURLEY"}, {"begin": 845, "end": 945, "course": "ST 261 TURLEY"}, {"begin": 1000, "end": 1100, "course": "EC 321 ALVAREZ"}], "B10": [{"begin": 1245, "end": 1415, "course": "AE 344 KOCHAN"}, {"begin": 1630, "end": 1800, "course": "PSC 484 HATHAWAY/ISLAM"}], "B02": [{"begin": 1630, "end": 1800, "course": "MKT 492 HATHAWAY"}], "B15": [{"begin": 1630, "end": 1800, "course": "GY 466 SCIUCHETTI"}], "300": [{"begin": 1100, "end": 1230, "course": "AE 393 SHANMUGAM"}]}, "Thursday": {}, "Friday": {"B01": [{"begin": 730, "end": 830, "course": "EC 222 ALVAREZ"}, {"begin": 845, "end": 945, "course": "COM 200 STEWART"}], "B18": [{"begin": 730, "end": 830, "course": "COM 380 MURPHY"}, {"begin": 845, "end": 945, "course": "COM 400 MURPHY"}, {"begin": 1000, "end": 1100, "course": "COM 304 JOYCE"}], "100": [{"begin": 730, "end": 830, "course": "ST 345 LOWE"}, {"begin": 845, "end": 945, "course": "ST 260 LOWE"}, {"begin": 1000, "end": 1100, "course": "FIN 441 BOOZER"}], "105": [{"begin": 730, "end": 830, "course": "CBA 350 WALKER"}, {"begin": 845, "end": 945, "course": "COM 345 STEWART"}], "109": [{"begin": 730, "end": 830, "course": "EC 487 ALVAREZ"}], "115": [{"begin": 730, "end": 830, "course": "MKT 361 SCIUCHETTI"}, {"begin": 845, "end": 945, "course": "MKT 488 SCIUCHETTI"}], "116": [{"begin": 730, "end": 830, "course": "CBA 390 LU"}], "200": [{"begin": 845, "end": 945, "course": "ST 261 TURLEY"}, {"begin": 1000, "end": 1100, "course": "EC 321 ALVAREZ"}]}}};
+        const SCHEDULE_DATA = {"Martin": {"Monday": {"111": [{"begin": 745, "end": 945, "course": "BY434"}, {"begin": 745, "end": 945, "course": "BY5034"}, {"begin": 1000, "end": 1100, "course": "BY406"}, {"begin": 1000, "end": 1100, "course": "BY5006"}, {"begin": 1345, "end": 1545, "course": "BY419"}, {"begin": 1345, "end": 1545, "course": "BY5019"}], "122": [{"begin": 845, "end": 945, "course": "BY322"}, {"begin": 1000, "end": 1100, "course": "BY324"}, {"begin": 1115, "end": 1215, "course": "BY283"}, {"begin": 1230, "end": 1330, "course": "BY122"}, {"begin": 1345, "end": 1445, "course": "BY283"}, {"begin": 1500, "end": 1630, "course": "BY101"}], "130": [{"begin": 845, "end": 945, "course": "BY264"}, {"begin": 1000, "end": 1100, "course": "BY263"}, {"begin": 1115, "end": 1215, "course": "BY263"}, {"begin": 1230, "end": 1330, "course": "BY123"}, {"begin": 1345, "end": 1445, "course": "BY121"}], "219": [{"begin": 845, "end": 945, "course": "PHS491"}, {"begin": 845, "end": 945, "course": "PHS5091"}, {"begin": 1000, "end": 1100, "course": "PHS371"}, {"begin": 1345, "end": 1545, "course": "PHS222"}, {"begin": 1900, "end": 2130, "course": "PHS371"}], "234": [{"begin": 845, "end": 945, "course": "PHS201"}, {"begin": 1000, "end": 1100, "course": "GY220"}, {"begin": 1115, "end": 1215, "course": "CY232"}, {"begin": 1230, "end": 1330, "course": "GL241"}, {"begin": 1345, "end": 1445, "course": "PHS201"}], "250": [{"begin": 845, "end": 945, "course": "BY443"}, {"begin": 845, "end": 945, "course": "BY5043"}, {"begin": 1000, "end": 1100, "course": "BY323"}, {"begin": 1115, "end": 1215, "course": "BY463"}, {"begin": 1115, "end": 1215, "course": "BY5063"}, {"begin": 1115, "end": 1215, "course": "CY463"}, {"begin": 1230, "end": 1330, "course": "BY419"}, {"begin": 1230, "end": 1330, "course": "BY5019"}], "307": [{"begin": 845, "end": 945, "course": "AN224"}, {"begin": 1000, "end": 1059, "course": "GL242"}, {"begin": 1115, "end": 1215, "course": "GY366"}, {"begin": 1345, "end": 1445, "course": "AN345"}, {"begin": 1900, "end": 2130, "course": "PHS371"}], "332": [{"begin": 845, "end": 945, "course": "CY363"}, {"begin": 1000, "end": 1100, "course": "CY450"}, {"begin": 1115, "end": 1215, "course": "GY250"}, {"begin": 1230, "end": 1330, "course": "GY251"}, {"begin": 1345, "end": 1445, "course": "BY123"}, {"begin": 1500, "end": 1630, "course": "CY231"}], "336": [{"begin": 845, "end": 945, "course": "BY121"}, {"begin": 1000, "end": 1100, "course": "BY101"}, {"begin": 1115, "end": 1215, "course": "BY101"}, {"begin": 1230, "end": 1330, "course": "BY102"}, {"begin": 1345, "end": 1445, "course": "BY102"}, {"begin": 1500, "end": 1630, "course": "BY472"}, {"begin": 1500, "end": 1630, "course": "BY5072"}], "224": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1230, "end": 1430, "course": "BY104"}, {"begin": 1500, "end": 1700, "course": "BY104"}], "228": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1230, "end": 1430, "course": "BY104"}], "319": [{"begin": 1000, "end": 1100, "course": "PHS202"}, {"begin": 1115, "end": 1215, "course": "PHS202"}, {"begin": 1230, "end": 1330, "course": "CY106"}, {"begin": 1230, "end": 1330, "course": "CY126"}], "321": [{"begin": 1000, "end": 1200, "course": "BY263"}, {"begin": 1230, "end": 1430, "course": "BY263"}, {"begin": 1500, "end": 1700, "course": "BY263"}], "105": [{"begin": 1100, "end": 1300, "course": "GL244"}, {"begin": 1345, "end": 1545, "course": "GY252"}, {"begin": 1730, "end": 1930, "course": "GY253"}], "203": [{"begin": 1115, "end": 1215, "course": "BY340"}, {"begin": 1615, "end": 1915, "course": "GIS420"}, {"begin": 1615, "end": 1915, "course": "GIS5220"}], "309": [{"begin": 1230, "end": 1430, "course": "BY373"}], "327": [{"begin": 1230, "end": 1430, "course": "BY264"}, {"begin": 1500, "end": 1700, "course": "BY264"}], "202": [{"begin": 1300, "end": 1400, "course": "SSC101"}], "102": [{"begin": 1500, "end": 1630, "course": "BY293"}]}, "Tuesday": {"122": [{"begin": 730, "end": 900, "course": "BY264"}, {"begin": 915, "end": 1045, "course": "BY102"}, {"begin": 1245, "end": 1415, "course": "BY332"}, {"begin": 1430, "end": 1600, "course": "BY264"}], "130": [{"begin": 730, "end": 900, "course": "BY434"}, {"begin": 730, "end": 900, "course": "BY5034"}, {"begin": 915, "end": 1045, "course": "BY263"}, {"begin": 1100, "end": 1230, "course": "BY263"}, {"begin": 1245, "end": 1415, "course": "BY373"}, {"begin": 1430, "end": 1600, "course": "BY263"}], "217": [{"begin": 900, "end": 1100, "course": "PHS203"}, {"begin": 1115, "end": 1315, "course": "PHS203"}, {"begin": 1330, "end": 1530, "course": "PHS203"}], "111": [{"begin": 915, "end": 1115, "course": "BY434"}, {"begin": 915, "end": 1115, "course": "BY5034"}, {"begin": 1430, "end": 1630, "course": "BY332"}], "202": [{"begin": 915, "end": 1045, "course": "CY342"}, {"begin": 1115, "end": 1215, "course": "BY481"}, {"begin": 1115, "end": 1215, "course": "BY5081"}, {"begin": 1245, "end": 1415, "course": "CY411"}, {"begin": 1430, "end": 1600, "course": "GY304"}], "234": [{"begin": 915, "end": 1045, "course": "CY232"}, {"begin": 1400, "end": 1700, "course": "BY498"}, {"begin": 1400, "end": 1700, "course": "CY498"}], "250": [{"begin": 915, "end": 1045, "course": "BY106"}, {"begin": 1245, "end": 1415, "course": "BY373"}, {"begin": 1500, "end": 1630, "course": "BY5133"}], "319": [{"begin": 915, "end": 1045, "course": "CY105"}, {"begin": 915, "end": 1045, "course": "CY125"}, {"begin": 1245, "end": 1415, "course": "GY320"}, {"begin": 1430, "end": 1600, "course": "CY435"}], "327": [{"begin": 915, "end": 1045, "course": "BY260"}, {"begin": 1100, "end": 1300, "course": "BY260"}, {"begin": 1500, "end": 1700, "course": "BY264"}], "332": [{"begin": 915, "end": 1045, "course": "CY106"}, {"begin": 915, "end": 1045, "course": "CY126"}, {"begin": 1100, "end": 1230, "course": "CY105"}, {"begin": 1100, "end": 1230, "course": "CY125"}], "336": [{"begin": 915, "end": 1045, "course": "BY121"}, {"begin": 1245, "end": 1415, "course": "BY122"}, {"begin": 1430, "end": 1600, "course": "BY101"}], "224": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1230, "end": 1430, "course": "BY104"}, {"begin": 1500, "end": 1700, "course": "BY104"}, {"begin": 1715, "end": 1915, "course": "BY104"}], "228": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1230, "end": 1430, "course": "BY104"}], "219": [{"begin": 1100, "end": 1230, "course": "CY115"}, {"begin": 1430, "end": 1730, "course": "CY115"}], "307": [{"begin": 1100, "end": 1230, "course": "CY421"}, {"begin": 1430, "end": 1600, "course": "GY120"}], "321": [{"begin": 1230, "end": 1430, "course": "BY263"}, {"begin": 1500, "end": 1700, "course": "BY263"}, {"begin": 1715, "end": 1915, "course": "BY263"}], "203": [{"begin": 1300, "end": 1430, "course": "GY307"}, {"begin": 1445, "end": 1545, "course": "UH101"}, {"begin": 1630, "end": 1930, "course": "GIS5550"}, {"begin": 1630, "end": 1930, "course": "GY406"}], "105": [{"begin": 1400, "end": 1600, "course": "GY252"}], "142": [{"begin": 1430, "end": 1600, "course": "AN225"}]}, "Wednesday": {"111": [{"begin": 730, "end": 930, "course": "BY5775"}, {"begin": 1000, "end": 1100, "course": "BY406"}, {"begin": 1000, "end": 1100, "course": "BY5006"}, {"begin": 1345, "end": 1545, "course": "BY463"}, {"begin": 1345, "end": 1545, "course": "BY5063"}, {"begin": 1345, "end": 1545, "course": "CY463"}], "321": [{"begin": 730, "end": 930, "course": "BY263"}, {"begin": 1000, "end": 1200, "course": "BY263"}, {"begin": 1230, "end": 1430, "course": "BY263"}, {"begin": 1500, "end": 1700, "course": "BY263"}, {"begin": 1715, "end": 1915, "course": "BY263"}], "122": [{"begin": 845, "end": 945, "course": "BY322"}, {"begin": 1000, "end": 1100, "course": "BY324"}, {"begin": 1115, "end": 1215, "course": "BY283"}, {"begin": 1230, "end": 1330, "course": "BY122"}, {"begin": 1345, "end": 1445, "course": "BY283"}, {"begin": 1500, "end": 1630, "course": "BY101"}], "130": [{"begin": 845, "end": 945, "course": "BY264"}, {"begin": 1000, "end": 1100, "course": "BY263"}, {"begin": 1115, "end": 1215, "course": "BY263"}, {"begin": 1230, "end": 1330, "course": "BY123"}, {"begin": 1345, "end": 1445, "course": "BY121"}], "219": [{"begin": 845, "end": 945, "course": "PHS491"}, {"begin": 845, "end": 945, "course": "PHS5091"}, {"begin": 1000, "end": 1100, "course": "PHS371"}, {"begin": 1345, "end": 1545, "course": "PHS222"}], "234": [{"begin": 845, "end": 945, "course": "PHS201"}, {"begin": 1000, "end": 1100, "course": "GY220"}, {"begin": 1115, "end": 1215, "course": "CY232"}, {"begin": 1230, "end": 1330, "course": "GL241"}, {"begin": 1345, "end": 1445, "course": "PHS201"}], "250": [{"begin": 845, "end": 945, "course": "BY443"}, {"begin": 845, "end": 945, "course": "BY5043"}, {"begin": 1000, "end": 1100, "course": "BY323"}, {"begin": 1115, "end": 1215, "course": "BY463"}, {"begin": 1115, "end": 1215, "course": "BY5063"}, {"begin": 1115, "end": 1215, "course": "CY463"}, {"begin": 1230, "end": 1330, "course": "BY419"}, {"begin": 1230, "end": 1330, "course": "BY5019"}], "307": [{"begin": 845, "end": 945, "course": "AN224"}, {"begin": 1000, "end": 1059, "course": "GL242"}, {"begin": 1115, "end": 1215, "course": "GY366"}, {"begin": 1345, "end": 1445, "course": "AN345"}], "332": [{"begin": 845, "end": 945, "course": "CY363"}, {"begin": 1000, "end": 1100, "course": "CY450"}, {"begin": 1115, "end": 1215, "course": "GY250"}, {"begin": 1230, "end": 1330, "course": "GY251"}, {"begin": 1345, "end": 1445, "course": "BY123"}, {"begin": 1500, "end": 1630, "course": "CY231"}], "336": [{"begin": 845, "end": 945, "course": "BY121"}, {"begin": 1000, "end": 1100, "course": "BY101"}, {"begin": 1115, "end": 1215, "course": "BY101"}, {"begin": 1230, "end": 1330, "course": "BY102"}, {"begin": 1345, "end": 1445, "course": "BY102"}, {"begin": 1500, "end": 1630, "course": "BY472"}, {"begin": 1500, "end": 1630, "course": "BY5072"}], "217": [{"begin": 1000, "end": 1200, "course": "PHS203"}], "224": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1230, "end": 1430, "course": "BY104"}, {"begin": 1500, "end": 1700, "course": "BY104"}, {"begin": 1715, "end": 1915, "course": "BY104"}], "228": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1230, "end": 1430, "course": "BY108"}], "309": [{"begin": 1000, "end": 1200, "course": "BY373"}, {"begin": 1345, "end": 1545, "course": "BY373"}], "319": [{"begin": 1000, "end": 1100, "course": "PHS202"}, {"begin": 1115, "end": 1215, "course": "PHS202"}, {"begin": 1230, "end": 1330, "course": "CY106"}, {"begin": 1230, "end": 1330, "course": "CY126"}], "327": [{"begin": 1000, "end": 1200, "course": "BY264"}, {"begin": 1230, "end": 1430, "course": "BY264"}, {"begin": 1500, "end": 1700, "course": "BY264"}], "203": [{"begin": 1115, "end": 1215, "course": "BY340"}], "105": [{"begin": 1400, "end": 1600, "course": "GY252"}, {"begin": 1730, "end": 1930, "course": "GY253"}], "102": [{"begin": 1500, "end": 1630, "course": "BY293"}], "302": [{"begin": 1600, "end": 1900, "course": "GIS408"}, {"begin": 1600, "end": 1900, "course": "GIS5210"}]}, "Thursday": {"122": [{"begin": 730, "end": 900, "course": "BY264"}, {"begin": 915, "end": 1045, "course": "BY102"}, {"begin": 1245, "end": 1415, "course": "BY332"}, {"begin": 1430, "end": 1600, "course": "BY264"}], "130": [{"begin": 730, "end": 900, "course": "BY434"}, {"begin": 730, "end": 900, "course": "BY5034"}, {"begin": 915, "end": 1045, "course": "BY263"}, {"begin": 1100, "end": 1230, "course": "BY263"}, {"begin": 1245, "end": 1415, "course": "BY373"}, {"begin": 1430, "end": 1600, "course": "BY263"}], "321": [{"begin": 730, "end": 930, "course": "BY263"}, {"begin": 1000, "end": 1200, "course": "BY263"}, {"begin": 1230, "end": 1430, "course": "BY263"}, {"begin": 1500, "end": 1700, "course": "BY263"}], "105": [{"begin": 830, "end": 1030, "course": "GY253"}, {"begin": 1100, "end": 1300, "course": "GL243"}, {"begin": 1400, "end": 1600, "course": "GL243"}], "217": [{"begin": 900, "end": 1100, "course": "PHS204"}, {"begin": 1115, "end": 1315, "course": "PHS204"}, {"begin": 1330, "end": 1530, "course": "PHS204"}], "111": [{"begin": 915, "end": 1115, "course": "BY434"}, {"begin": 915, "end": 1115, "course": "BY5034"}, {"begin": 1430, "end": 1630, "course": "BY332"}], "202": [{"begin": 915, "end": 1045, "course": "CY342"}, {"begin": 1245, "end": 1415, "course": "CY411"}, {"begin": 1430, "end": 1600, "course": "GY304"}], "234": [{"begin": 915, "end": 1045, "course": "CY232"}, {"begin": 1400, "end": 1700, "course": "BY498"}, {"begin": 1400, "end": 1700, "course": "CY498"}], "250": [{"begin": 915, "end": 1045, "course": "BY106"}, {"begin": 1245, "end": 1415, "course": "BY373"}, {"begin": 1500, "end": 1630, "course": "BY5133"}], "319": [{"begin": 915, "end": 1045, "course": "CY105"}, {"begin": 915, "end": 1045, "course": "CY125"}, {"begin": 1245, "end": 1415, "course": "GY320"}, {"begin": 1430, "end": 1600, "course": "CY435"}], "327": [{"begin": 915, "end": 1045, "course": "BY260"}, {"begin": 1230, "end": 1430, "course": "BY264"}], "332": [{"begin": 915, "end": 1045, "course": "CY106"}, {"begin": 915, "end": 1045, "course": "CY126"}, {"begin": 1100, "end": 1230, "course": "CY105"}, {"begin": 1100, "end": 1230, "course": "CY125"}], "336": [{"begin": 915, "end": 1045, "course": "BY121"}, {"begin": 1245, "end": 1415, "course": "BY122"}, {"begin": 1430, "end": 1600, "course": "BY101"}], "224": [{"begin": 1000, "end": 1200, "course": "BY104"}, {"begin": 1500, "end": 1700, "course": "BY104"}], "228": [{"begin": 1000, "end": 1200, "course": "BY104"}], "219": [{"begin": 1100, "end": 1230, "course": "CY115"}], "307": [{"begin": 1100, "end": 1230, "course": "CY421"}, {"begin": 1430, "end": 1600, "course": "GY120"}], "203": [{"begin": 1300, "end": 1430, "course": "GY307"}, {"begin": 1630, "end": 1930, "course": "BY5110"}, {"begin": 1630, "end": 1930, "course": "GIS5510"}], "142": [{"begin": 1430, "end": 1600, "course": "AN225"}], "302": [{"begin": 1630, "end": 1930, "course": "GIS5560"}]}, "Friday": {"111": [{"begin": 730, "end": 930, "course": "BY406"}, {"begin": 730, "end": 930, "course": "BY5006"}, {"begin": 1000, "end": 1100, "course": "BY406"}, {"begin": 1000, "end": 1100, "course": "BY5006"}], "122": [{"begin": 845, "end": 945, "course": "BY322"}, {"begin": 1000, "end": 1100, "course": "BY324"}, {"begin": 1115, "end": 1215, "course": "BY283"}, {"begin": 1230, "end": 1330, "course": "BY122"}, {"begin": 1345, "end": 1445, "course": "BY283"}], "130": [{"begin": 845, "end": 945, "course": "BY264"}, {"begin": 1000, "end": 1100, "course": "BY263"}, {"begin": 1115, "end": 1215, "course": "BY263"}, {"begin": 1230, "end": 1330, "course": "BY123"}, {"begin": 1345, "end": 1445, "course": "BY121"}], "219": [{"begin": 845, "end": 945, "course": "PHS491"}, {"begin": 845, "end": 945, "course": "PHS5091"}, {"begin": 1000, "end": 1100, "course": "PHS371"}, {"begin": 1345, "end": 1545, "course": "PHS222"}], "234": [{"begin": 845, "end": 945, "course": "PHS201"}, {"begin": 1000, "end": 1100, "course": "GY220"}, {"begin": 1115, "end": 1215, "course": "CY232"}, {"begin": 1230, "end": 1330, "course": "GL241"}, {"begin": 1345, "end": 1445, "course": "PHS201"}], "250": [{"begin": 845, "end": 945, "course": "BY443"}, {"begin": 845, "end": 945, "course": "BY5043"}, {"begin": 1000, "end": 1100, "course": "BY323"}, {"begin": 1115, "end": 1215, "course": "BY463"}, {"begin": 1115, "end": 1215, "course": "BY5063"}, {"begin": 1115, "end": 1215, "course": "CY463"}, {"begin": 1230, "end": 1330, "course": "BY419"}, {"begin": 1230, "end": 1330, "course": "BY5019"}], "307": [{"begin": 845, "end": 945, "course": "AN224"}, {"begin": 1000, "end": 1059, "course": "GL242"}, {"begin": 1115, "end": 1215, "course": "GY366"}, {"begin": 1345, "end": 1445, "course": "AN345"}], "332": [{"begin": 845, "end": 945, "course": "CY363"}, {"begin": 1000, "end": 1100, "course": "CY450"}, {"begin": 1115, "end": 1215, "course": "GY250"}, {"begin": 1230, "end": 1330, "course": "GY251"}, {"begin": 1345, "end": 1445, "course": "BY123"}], "336": [{"begin": 845, "end": 945, "course": "BY121"}, {"begin": 1000, "end": 1100, "course": "BY101"}, {"begin": 1115, "end": 1215, "course": "BY101"}, {"begin": 1230, "end": 1330, "course": "BY102"}, {"begin": 1345, "end": 1445, "course": "BY102"}], "319": [{"begin": 1000, "end": 1100, "course": "PHS202"}, {"begin": 1115, "end": 1215, "course": "PHS202"}, {"begin": 1230, "end": 1330, "course": "CY106"}, {"begin": 1230, "end": 1330, "course": "CY126"}], "216": [{"begin": 1100, "end": 1159, "course": "BY5101"}], "203": [{"begin": 1115, "end": 1215, "course": "BY340"}], "105": [{"begin": 1345, "end": 1545, "course": "GL244"}]}}, "McGee": {"Monday": {"202": [{"begin": 915, "end": 1215, "course": "CY108"}, {"begin": 1300, "end": 1600, "course": "CY108"}], "104": [{"begin": 1000, "end": 1200, "course": "BY103"}, {"begin": 1500, "end": 1700, "course": "BY103"}], "107": [{"begin": 1000, "end": 1200, "course": "BY283"}, {"begin": 1230, "end": 1430, "course": "BY283"}, {"begin": 1500, "end": 1700, "course": "BY283"}], "111": [{"begin": 1000, "end": 1200, "course": "BY103"}, {"begin": 1230, "end": 1430, "course": "BY103"}, {"begin": 1500, "end": 1700, "course": "BY103"}], "210": [{"begin": 1100, "end": 1400, "course": "CY411"}], "207": [{"begin": 1430, "end": 1730, "course": "CY363"}], "208": [{"begin": 1430, "end": 1730, "course": "CY232"}]}, "Tuesday": {"110": [{"begin": 915, "end": 1115, "course": "BY322"}, {"begin": 1130, "end": 1330, "course": "BY322"}], "202": [{"begin": 915, "end": 1215, "course": "CY108"}, {"begin": 1300, "end": 1600, "course": "CY108"}], "107": [{"begin": 1000, "end": 1200, "course": "BY323"}, {"begin": 1230, "end": 1430, "course": "BY323"}, {"begin": 1500, "end": 1700, "course": "BY283"}, {"begin": 1715, "end": 1915, "course": "BY283"}], "111": [{"begin": 1000, "end": 1200, "course": "BY103"}, {"begin": 1230, "end": 1430, "course": "BY103"}, {"begin": 1500, "end": 1700, "course": "BY103"}], "104": [{"begin": 1230, "end": 1430, "course": "BY103"}, {"begin": 1500, "end": 1700, "course": "BY103"}], "207": [{"begin": 1430, "end": 1730, "course": "CY421"}]}, "Wednesday": {"110": [{"begin": 1000, "end": 1200, "course": "BY103"}, {"begin": 1230, "end": 1430, "course": "BY103"}, {"begin": 1500, "end": 1700, "course": "BY103"}], "111": [{"begin": 1000, "end": 1200, "course": "BY103"}, {"begin": 1230, "end": 1430, "course": "BY103"}, {"begin": 1715, "end": 1915, "course": "BY103"}], "208": [{"begin": 1115, "end": 1415, "course": "CY231"}, {"begin": 1430, "end": 1730, "course": "CY232"}], "107": [{"begin": 1230, "end": 1430, "course": "BY283"}], "202": [{"begin": 1300, "end": 1600, "course": "CY107"}], "207": [{"begin": 1430, "end": 1730, "course": "CY363"}], "104": [{"begin": 1500, "end": 1700, "course": "BY103"}, {"begin": 1715, "end": 1915, "course": "BY103"}]}, "Thursday": {"202": [{"begin": 915, "end": 1215, "course": "CY107"}, {"begin": 1300, "end": 1600, "course": "CY107"}, {"begin": 1700, "end": 2000, "course": "CY107"}], "208": [{"begin": 915, "end": 1215, "course": "CY232"}], "104": [{"begin": 1230, "end": 1430, "course": "BY103"}, {"begin": 1500, "end": 1700, "course": "BY103"}], "110": [{"begin": 1230, "end": 1430, "course": "BY103"}, {"begin": 1500, "end": 1700, "course": "BY103"}], "210": [{"begin": 1430, "end": 1730, "course": "CY342"}]}, "Friday": {}}, "Brewer": {"Monday": {"328": [{"begin": 900, "end": 1030, "course": "SW390"}, {"begin": 1100, "end": 1230, "course": "SW381"}, {"begin": 1245, "end": 1415, "course": "SW332"}, {"begin": 1430, "end": 1600, "course": "SW343"}], "329": [{"begin": 900, "end": 1030, "course": "SW230"}, {"begin": 1100, "end": 1230, "course": "SW380"}, {"begin": 1245, "end": 1415, "course": "SW350"}], "331": [{"begin": 900, "end": 1030, "course": "SW391"}], "230": [{"begin": 1000, "end": 1100, "course": "PSC102"}], "228": [{"begin": 1115, "end": 1215, "course": "SY221"}, {"begin": 1230, "end": 1330, "course": "SY221"}, {"begin": 1345, "end": 1515, "course": "PSC355"}], "B100": [{"begin": 1115, "end": 1215, "course": "SY365"}, {"begin": 1230, "end": 1330, "course": "SY360"}], "231": [{"begin": 1230, "end": 1330, "course": "PSC310"}]}, "Tuesday": {"213": [{"begin": 915, "end": 1045, "course": "PSC232"}], "228": [{"begin": 915, "end": 1045, "course": "SY221"}, {"begin": 1100, "end": 1230, "course": "SY221"}, {"begin": 1245, "end": 1415, "course": "SY356"}], "230": [{"begin": 915, "end": 1045, "course": "PSC100"}, {"begin": 1100, "end": 1230, "course": "PSC100"}, {"begin": 1245, "end": 1415, "course": "PSC331"}], "328": [{"begin": 915, "end": 1045, "course": "SW360"}, {"begin": 1100, "end": 1230, "course": "SW336"}], "231": [{"begin": 1100, "end": 1230, "course": "SY366"}], "329": [{"begin": 1245, "end": 1415, "course": "SW230"}], "B103": [{"begin": 1430, "end": 1600, "course": "SY301"}]}, "Wednesday": {"328": [{"begin": 900, "end": 1030, "course": "SW390"}, {"begin": 1100, "end": 1230, "course": "SW381"}, {"begin": 1245, "end": 1415, "course": "SW332"}, {"begin": 1430, "end": 1600, "course": "SW343"}], "329": [{"begin": 900, "end": 1030, "course": "SW230"}, {"begin": 1100, "end": 1230, "course": "SW380"}, {"begin": 1245, "end": 1415, "course": "SW350"}], "330": [{"begin": 900, "end": 1200, "course": "SW450"}, {"begin": 1300, "end": 1600, "course": "SW448"}], "331": [{"begin": 900, "end": 1030, "course": "SW391"}], "230": [{"begin": 1000, "end": 1100, "course": "PSC102"}], "228": [{"begin": 1115, "end": 1215, "course": "SY221"}, {"begin": 1230, "end": 1330, "course": "SY221"}, {"begin": 1345, "end": 1515, "course": "PSC355"}], "B100": [{"begin": 1115, "end": 1215, "course": "SY365"}, {"begin": 1230, "end": 1330, "course": "SY360"}], "231": [{"begin": 1230, "end": 1330, "course": "PSC310"}]}, "Thursday": {"213": [{"begin": 915, "end": 1045, "course": "PSC232"}], "228": [{"begin": 915, "end": 1045, "course": "SY221"}, {"begin": 1100, "end": 1230, "course": "SY221"}, {"begin": 1245, "end": 1415, "course": "SY356"}], "230": [{"begin": 915, "end": 1045, "course": "PSC100"}, {"begin": 1100, "end": 1230, "course": "PSC100"}, {"begin": 1245, "end": 1415, "course": "PSC331"}], "328": [{"begin": 915, "end": 1045, "course": "SW360"}, {"begin": 1100, "end": 1230, "course": "SW336"}, {"begin": 1400, "end": 1600, "course": "SW5951"}, {"begin": 1615, "end": 1815, "course": "SW5255"}], "231": [{"begin": 1100, "end": 1230, "course": "SY366"}], "329": [{"begin": 1245, "end": 1415, "course": "SW230"}], "330": [{"begin": 1400, "end": 1600, "course": "SW5950"}, {"begin": 1615, "end": 1915, "course": "SW5170"}], "B100": [{"begin": 1430, "end": 1630, "course": "SW200"}], "B103": [{"begin": 1430, "end": 1600, "course": "SY301"}], "141": [{"begin": 1600, "end": 1800, "course": "SW5700"}, {"begin": 1815, "end": 2015, "course": "SW5200"}]}, "Friday": {"230": [{"begin": 1000, "end": 1100, "course": "PSC102"}], "231": [{"begin": 1000, "end": 1100, "course": "SSC101"}, {"begin": 1230, "end": 1330, "course": "PSC310"}], "228": [{"begin": 1115, "end": 1215, "course": "SY221"}, {"begin": 1230, "end": 1330, "course": "SY221"}], "B100": [{"begin": 1115, "end": 1215, "course": "SY365"}, {"begin": 1230, "end": 1330, "course": "SY360"}]}}, "Merrill": {"Monday": {"B01": [{"begin": 730, "end": 830, "course": "EC 222 - ALVAREZ"}, {"begin": 845, "end": 945, "course": "COM 200 - STEWART"}, {"begin": 915, "end": 1045, "course": "AE 486 - GODBEY"}], "B18": [{"begin": 730, "end": 830, "course": "COM 380 - MURPHY"}, {"begin": 845, "end": 945, "course": "COM 400 - MURPHY"}, {"begin": 1000, "end": 1100, "course": "COM 304 - JOYCE"}, {"begin": 1630, "end": 1800, "course": "AE 252 - QUADER"}], "100": [{"begin": 730, "end": 830, "course": "ST 345 - LOWE"}, {"begin": 845, "end": 945, "course": "ST 260 - LOWE"}, {"begin": 1000, "end": 1100, "course": "FIN 441 - BOOZER"}], "105": [{"begin": 730, "end": 830, "course": "CBA 350 - WALKER"}, {"begin": 845, "end": 945, "course": "COM 345 - STEWART"}], "109": [{"begin": 730, "end": 830, "course": "EC 487 - ALVAREZ"}], "115": [{"begin": 730, "end": 830, "course": "MKT 361 - SCIUCHETTI"}, {"begin": 845, "end": 945, "course": "MKT 488 - SCIUCHETTI"}], "116": [{"begin": 730, "end": 830, "course": "CBA 390 - LU"}], "200": [{"begin": 1000, "end": 1100, "course": "EC 321 - ALVAREZ"}], "B10": [{"begin": 1245, "end": 1415, "course": "AE 344 - KOCHAN"}, {"begin": 1630, "end": 1800, "course": "PSC 484 - HATHAWAY"}], "B02": [{"begin": 1630, "end": 1800, "course": "MKT 492 - HATHAWAY"}], "B15": [{"begin": 1630, "end": 1800, "course": "GY 466 - SCIUCHETTI"}], "214": [{"begin": 730, "end": 830, "course": "COM 362 - JOYCE"}], "218": [{"begin": 730, "end": 830, "course": "SSC 101 - HANVEY"}]}, "Tuesday": {"B01": [{"begin": 730, "end": 900, "course": "EC 221 - CARTER"}, {"begin": 915, "end": 1045, "course": "EC 221 - CARTER"}], "B02": [{"begin": 730, "end": 900, "course": "CBA 115 - SIMON"}], "100": [{"begin": 230, "end": 400, "course": "CBA 210 - KIM"}, {"begin": 730, "end": 900, "course": "FIN 434 - CLAYTON"}, {"begin": 915, "end": 1045, "course": "FIN 325 - CLAYTON"}, {"begin": 1100, "end": 1230, "course": "ACC 305 - ZANZIG"}, {"begin": 1245, "end": 215, "course": "MGT 375 - KIM"}], "105": [{"begin": 730, "end": 900, "course": "EC 463 - HANKINS"}, {"begin": 915, "end": 1045, "course": "EC 310 - HANKINS"}, {"begin": 1100, "end": 1230, "course": "COM 315 - CUNNINGHAM"}, {"begin": 1245, "end": 215, "course": "CBA 330/331 - SIMON"}], "109": [{"begin": 730, "end": 900, "course": "COM 415 - McGRAIL"}, {"begin": 915, "end": 1045, "course": "ACC 477 - ZANZIG"}, {"begin": 1100, "end": 1230, "course": "CBA 469 - MERTENS"}], "110": [{"begin": 730, "end": 900, "course": "FIN 292 - LANDRY"}, {"begin": 915, "end": 1045, "course": "FIN 301 - SCHMIDT"}, {"begin": 1100, "end": 1230, "course": "MKT 301/301 - HUANG"}, {"begin": 1245, "end": 215, "course": "ACC 360 - J. SNEED"}], "115": [{"begin": 730, "end": 900, "course": "MGT 330 - LUCY"}, {"begin": 915, "end": 1045, "course": "FIN 370 - WANG"}, {"begin": 1100, "end": 1230, "course": "ACC 372 - J.SNEED"}], "116": [{"begin": 730, "end": 900, "course": "MGT 385 - WOODARD"}, {"begin": 915, "end": 1045, "course": "MGT 305 - NING"}, {"begin": 1100, "end": 1230, "course": "MKT 378 - HUANG"}, {"begin": 1245, "end": 215, "course": "MGT 491 - WOODARD"}], "118": [{"begin": 730, "end": 900, "course": "CBA 469 - MERTENS"}, {"begin": 915, "end": 1045, "course": "MGT 301/302 - ALIKAJ"}, {"begin": 1100, "end": 1230, "course": "ST 261 - HEARD"}, {"begin": 1245, "end": 215, "course": "ST 260 - HEARD"}], "200": [{"begin": 730, "end": 900, "course": "ACC 310 - COLLUM"}, {"begin": 915, "end": 1045, "course": "ACC 200 - COLLUM"}, {"begin": 1100, "end": 1230, "course": "ACC 200 - SUDDUTH"}, {"begin": 1245, "end": 215, "course": "ACC 210 - GRADY"}, {"begin": 1245, "end": 215, "course": "ACC 210 - SUDDUTH"}], "214": [{"begin": 730, "end": 900, "course": "COM 420 - CUNNINGHAM"}, {"begin": 915, "end": 1045, "course": "MGT 372 - YI"}, {"begin": 1100, "end": 1230, "course": "COM 318 - CUNNINGHAM"}], "218": [{"begin": 730, "end": 900, "course": "ACC 448 - SUDDUTH"}, {"begin": 915, "end": 1045, "course": "MGT 330 - LUCY"}], "300": [{"begin": 915, "end": 1045, "course": "AE 380 - GODBEY"}, {"begin": 1100, "end": 1230, "course": "AE 440 - INGALSBE"}]}, "Wednesday": {"B01": [{"begin": 730, "end": 830, "course": "EC 222 - ALVAREZ"}, {"begin": 845, "end": 945, "course": "COM 200 - STEWART"}, {"begin": 915, "end": 1045, "course": "AE 486 - GODBEY"}], "B18": [{"begin": 730, "end": 830, "course": "COM 380 - MURPHY"}, {"begin": 845, "end": 945, "course": "COM 400 - MURPHY"}, {"begin": 1000, "end": 1100, "course": "COM 304 - JOYCE"}, {"begin": 1630, "end": 1800, "course": "AE 252 - QUADER"}], "100": [{"begin": 730, "end": 830, "course": "ST 345 - LOWE"}, {"begin": 845, "end": 945, "course": "ST 260 - LOWE"}, {"begin": 1000, "end": 1100, "course": "FIN 441 - BOOZER"}], "105": [{"begin": 730, "end": 830, "course": "CBA 350 - WALKER"}, {"begin": 845, "end": 945, "course": "COM 345 - STEWART"}], "109": [{"begin": 730, "end": 830, "course": "EC 487 - ALVAREZ"}], "115": [{"begin": 730, "end": 830, "course": "MKT 361 - SCIUCHETTI"}, {"begin": 845, "end": 945, "course": "MKT 488 - SCIUCHETTI"}], "116": [{"begin": 730, "end": 830, "course": "CBA 390 - LU"}], "200": [{"begin": 845, "end": 945, "course": "ST 261 - TURLEY"}, {"begin": 1000, "end": 1100, "course": "EC 321 - ALVAREZ"}], "B10": [{"begin": 1245, "end": 1415, "course": "AE 344 - KOCHAN"}, {"begin": 1630, "end": 1800, "course": "PSC 484 - HATHAWAY"}], "B02": [{"begin": 1630, "end": 1800, "course": "MKT 492 - HATHAWAY"}], "B15": [{"begin": 1630, "end": 1800, "course": "GY 466 - SCIUCHETTI"}], "300": [{"begin": 1100, "end": 1230, "course": "AE 393 - SHANMUGAM"}]}, "Thursday": {"B01": [{"begin": 730, "end": 900, "course": "EC 221 - CARTER"}], "B02": [{"begin": 730, "end": 900, "course": "CBA 115 - SIMON"}], "100": [{"begin": 230, "end": 400, "course": "CBA 210 - KIM"}, {"begin": 730, "end": 900, "course": "FIN 434 - CLAYTON"}, {"begin": 915, "end": 1045, "course": "FIN 325 - CLAYTON"}, {"begin": 1245, "end": 215, "course": "MGT 375 - KIM"}], "105": [{"begin": 730, "end": 900, "course": "EC 463 - HANKINS"}, {"begin": 915, "end": 1045, "course": "EC 310 - HANKINS"}, {"begin": 1100, "end": 1230, "course": "COM 315 - CUNNINGHAM"}, {"begin": 1245, "end": 215, "course": "CBA 330/331 - SIMON"}], "109": [{"begin": 730, "end": 900, "course": "COM 415 - McGRAIL"}, {"begin": 915, "end": 1045, "course": "ACC 477 - ZANZIG"}, {"begin": 1100, "end": 1230, "course": "CBA 469 - MERTENS"}], "110": [{"begin": 730, "end": 900, "course": "FIN 292 - LANDRY"}, {"begin": 915, "end": 1045, "course": "FIN 301 - SCHMIDT"}, {"begin": 1100, "end": 1230, "course": "MKT 301/301 - HUANG"}, {"begin": 1245, "end": 215, "course": "ACC 360 - J. SNEED"}], "115": [{"begin": 730, "end": 900, "course": "MGT 330 - LUCY"}, {"begin": 1100, "end": 1230, "course": "ACC 372 - J.SNEED"}], "116": [{"begin": 730, "end": 900, "course": "MGT 385 - WOODARD"}, {"begin": 915, "end": 1045, "course": "MGT 305 - NING"}, {"begin": 1100, "end": 1230, "course": "MKT 378 - HUANG"}, {"begin": 1245, "end": 215, "course": "MGT 491 - WOODARD"}], "118": [{"begin": 730, "end": 900, "course": "CBA 469 - MERTENS"}, {"begin": 915, "end": 1045, "course": "MGT 301/302 - ALIKAJ"}, {"begin": 1100, "end": 1230, "course": "ST 261 - HEARD"}, {"begin": 1245, "end": 215, "course": "ST 260 - HEARD"}], "200": [{"begin": 730, "end": 900, "course": "ACC 310 - COLLUM"}, {"begin": 915, "end": 1045, "course": "ACC 200 - COLLUM"}, {"begin": 1100, "end": 1230, "course": "ACC 200 - SUDDUTH"}, {"begin": 1245, "end": 215, "course": "ACC 210 - GRADY"}], "214": [{"begin": 730, "end": 900, "course": "COM 420 - CUNNINGHAM"}, {"begin": 915, "end": 1045, "course": "MGT 372 - YI"}, {"begin": 1100, "end": 1230, "course": "COM 318 - CUNNINGHAM"}], "218": [{"begin": 730, "end": 900, "course": "ACC 448 - SUDDUTH"}, {"begin": 915, "end": 1045, "course": "MGT 330 - LUCY"}], "300": [{"begin": 730, "end": 900, "course": "AE 494 - SHANMUGAM"}, {"begin": 915, "end": 1045, "course": "AE 380 - GODBEY"}, {"begin": 1100, "end": 1230, "course": "AE 440 - INGALSBE"}]}, "Friday": {"B01": [{"begin": 730, "end": 830, "course": "EC 222 - ALVAREZ"}, {"begin": 845, "end": 945, "course": "COM 200 - STEWART"}], "B18": [{"begin": 730, "end": 830, "course": "COM 380 - MURPHY"}, {"begin": 845, "end": 945, "course": "COM 400 - MURPHY"}, {"begin": 1000, "end": 1100, "course": "COM 304 - JOYCE"}], "100": [{"begin": 730, "end": 830, "course": "ST 345 - LOWE"}, {"begin": 845, "end": 945, "course": "ST 260 - LOWE"}, {"begin": 1000, "end": 1100, "course": "FIN 441 - BOOZER"}], "105": [{"begin": 730, "end": 830, "course": "CBA 350 - WALKER"}, {"begin": 845, "end": 945, "course": "COM 345 - STEWART"}], "109": [{"begin": 730, "end": 830, "course": "EC 487 - ALVAREZ"}], "115": [{"begin": 730, "end": 830, "course": "MKT 361 - SCIUCHETTI"}, {"begin": 845, "end": 945, "course": "MKT 488 - SCIUCHETTI"}], "116": [{"begin": 730, "end": 830, "course": "CBA 390 - LU"}], "200": [{"begin": 1000, "end": 1100, "course": "EC 321 - ALVAREZ"}]}}};
 
         let currentBuilding = 'Martin';
         let currentDay = '';
@@ -597,6 +664,7 @@
         let activeFilters = [];
         let selectedDuration = 30;
         let currentModalRoom = null;
+        let currentModalBuilding = null;
 
         function init() {
             currentTime = new Date();
@@ -618,9 +686,12 @@
 
         function updateClock() {
             currentTime = new Date();
-            const hours = currentTime.getHours().toString().padStart(2, '0');
-            const minutes = currentTime.getMinutes().toString().padStart(2, '0');
-            document.getElementById('currentTime').textContent = `${hours}:${minutes}`;
+            const hours = currentTime.getHours();
+            const minutes = currentTime.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            const displayHours = hours > 12 ? hours - 12 : (hours === 0 ? 12 : hours);
+            const timeStr = `${displayHours}:${minutes.toString().padStart(2, '0')} ${ampm}`;
+            document.getElementById('currentTime').textContent = timeStr;
             
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             document.getElementById('currentDate').textContent = currentTime.toLocaleDateString('en-US', options);
@@ -779,42 +850,65 @@
             }
         }
 
+        function getAllPinnedRooms() {
+            const pinned = [];
+            
+            ['Martin', 'Merrill', 'McGee', 'Brewer'].forEach(building => {
+                const daySchedule = SCHEDULE_DATA[building]?.[currentDay] || {};
+                const rooms = Object.keys(daySchedule);
+                
+                rooms.forEach(room => {
+                    const key = `${building}-${room}`;
+                    if (pinnedRooms[key]) {
+                        pinned.push({ building, room });
+                    }
+                });
+            });
+            
+            return pinned;
+        }
+
         function renderRooms() {
             const searchTerm = document.getElementById('roomSearch').value.toLowerCase();
             const daySchedule = SCHEDULE_DATA[currentBuilding]?.[currentDay] || {};
             const rooms = Object.keys(daySchedule).sort((a, b) => {
-                const aNum = parseInt(a.replace(/[^0-9]/g, ''));
-                const bNum = parseInt(b.replace(/[^0-9]/g, ''));
+                const aNum = parseInt(a.replace(/[^0-9]/g, '')) || 0;
+                const bNum = parseInt(b.replace(/[^0-9]/g, '')) || 0;
                 return aNum - bNum;
             });
             
             const filteredRooms = rooms.filter(room => 
-                room.includes(searchTerm) && matchesFilter(currentBuilding, room)
+                room.toLowerCase().includes(searchTerm) && matchesFilter(currentBuilding, room)
             );
             
-            const pinnedRoomsList = filteredRooms.filter(room => pinnedRooms[`${currentBuilding}-${room}`]);
+            const allPinned = getAllPinnedRooms();
+            const pinnedToShow = allPinned.filter(p => 
+                p.room.toLowerCase().includes(searchTerm) && matchesFilter(p.building, p.room)
+            );
+            
             const unpinnedRoomsList = filteredRooms.filter(room => !pinnedRooms[`${currentBuilding}-${room}`]);
             
-            // Show/hide pinned section
-            if (pinnedRoomsList.length > 0) {
+            if (pinnedToShow.length > 0) {
                 document.getElementById('pinnedSection').style.display = 'block';
-                document.getElementById('pinnedGrid').innerHTML = pinnedRoomsList.map(room => createRoomCard(room, true)).join('');
+                document.getElementById('pinnedGrid').innerHTML = pinnedToShow.map(p => 
+                    createRoomCard(p.room, true, p.building)
+                ).join('');
             } else {
                 document.getElementById('pinnedSection').style.display = 'none';
             }
             
             const grid = document.getElementById('roomsGrid');
-            grid.innerHTML = unpinnedRoomsList.map(room => createRoomCard(room, false)).join('');
+            grid.innerHTML = unpinnedRoomsList.map(room => createRoomCard(room, false, currentBuilding)).join('');
         }
 
-        function createRoomCard(room, isPinned) {
-            const status = getRoomStatus(currentBuilding, room);
+        function createRoomCard(room, isPinned, building) {
+            const status = getRoomStatus(building, room);
             return `
-                <div class="room-card ${status.status} ${isPinned ? 'pinned' : ''}" onclick="openRoomDetails('${room}')">
-                    <button class="pin-btn ${isPinned ? 'pinned' : ''}" onclick="togglePin('${currentBuilding}', '${room}')">
+                <div class="room-card ${status.status} ${isPinned ? 'pinned' : ''}" onclick="openRoomDetails('${room}', '${building}')">
+                    <button class="pin-btn ${isPinned ? 'pinned' : ''}" onclick="togglePin('${building}', '${room}')">
                         ${isPinned ? '⭐' : '☆'}
                     </button>
-                    <div class="room-building">${currentBuilding}</div>
+                    <div class="room-building">${building}</div>
                     <div class="room-number">${room}</div>
                     <div class="room-status ${status.status}">${status.text}</div>
                     <div class="room-time">${status.time}</div>
@@ -825,55 +919,70 @@
 
         function renderListView() {
             const searchTerm = document.getElementById('roomSearch').value.toLowerCase();
+            
+            const allPinned = getAllPinnedRooms();
+            const pinnedToShow = allPinned.filter(p => 
+                p.room.toLowerCase().includes(searchTerm) && matchesFilter(p.building, p.room)
+            );
+            
             const daySchedule = SCHEDULE_DATA[currentBuilding]?.[currentDay] || {};
             const rooms = Object.keys(daySchedule).sort((a, b) => {
-                const aNum = parseInt(a.replace(/[^0-9]/g, ''));
-                const bNum = parseInt(b.replace(/[^0-9]/g, ''));
+                const aNum = parseInt(a.replace(/[^0-9]/g, '')) || 0;
+                const bNum = parseInt(b.replace(/[^0-9]/g, '')) || 0;
                 return aNum - bNum;
             });
             
             const filteredRooms = rooms.filter(room => 
-                room.includes(searchTerm) && matchesFilter(currentBuilding, room)
+                room.toLowerCase().includes(searchTerm) && 
+                matchesFilter(currentBuilding, room) &&
+                !pinnedRooms[`${currentBuilding}-${room}`]
             );
             
-            const pinnedRoomsList = filteredRooms.filter(room => pinnedRooms[`${currentBuilding}-${room}`]);
-            const unpinnedRoomsList = filteredRooms.filter(room => !pinnedRooms[`${currentBuilding}-${room}`]);
-            
-            const allRooms = [...pinnedRoomsList, ...unpinnedRoomsList];
-            
             const listView = document.getElementById('listView');
-            listView.innerHTML = allRooms.map(room => {
-                const status = getRoomStatus(currentBuilding, room);
-                const schedule = daySchedule[room] || [];
-                const isPinned = pinnedRooms[`${currentBuilding}-${room}`];
-                
-                return `
-                    <div class="list-room ${isPinned ? 'pinned' : ''}">
-                        <button class="pin-btn ${isPinned ? 'pinned' : ''}" onclick="togglePin('${currentBuilding}', '${room}')">
-                            ${isPinned ? '⭐' : '☆'}
-                        </button>
-                        <div class="list-room-header">
-                            <div class="list-room-number">${currentBuilding} ${room}</div>
-                            <div class="list-room-status ${status.status}">${status.status}</div>
-                        </div>
-                        <div class="list-schedule">
-                            ${schedule.length > 0 ? schedule.map(cls => `
-                                <div class="list-schedule-item">
-                                    <span class="list-schedule-time">${formatTime(cls.begin)} - ${formatTime(cls.end)}</span>
-                                    <span class="list-schedule-course">${cls.course}</span>
-                                </div>
-                            `).join('') : '<div style="text-align:center;color:#999;padding:20px;">No classes scheduled</div>'}
-                        </div>
-                    </div>
-                `;
-            }).join('');
+            let html = '';
+            
+            pinnedToShow.forEach(p => {
+                html += createListRoomItem(p.room, p.building, true);
+            });
+            
+            filteredRooms.forEach(room => {
+                html += createListRoomItem(room, currentBuilding, false);
+            });
+            
+            listView.innerHTML = html;
         }
 
-        function openRoomDetails(roomNumber) {
-            currentModalRoom = roomNumber;
-            document.getElementById('modalTitle').textContent = `${currentBuilding} ${roomNumber}`;
+        function createListRoomItem(room, building, isPinned) {
+            const status = getRoomStatus(building, room);
+            const schedule = SCHEDULE_DATA[building]?.[currentDay]?.[room] || [];
             
-            const schedule = SCHEDULE_DATA[currentBuilding]?.[currentDay]?.[roomNumber] || [];
+            return `
+                <div class="list-room ${isPinned ? 'pinned' : ''}">
+                    <button class="pin-btn ${isPinned ? 'pinned' : ''}" onclick="togglePin('${building}', '${room}')">
+                        ${isPinned ? '⭐' : '☆'}
+                    </button>
+                    <div class="list-room-header">
+                        <div class="list-room-number">${building} ${room}</div>
+                        <div class="list-room-status ${status.status}">${status.status}</div>
+                    </div>
+                    <div class="list-schedule">
+                        ${schedule.length > 0 ? schedule.map(cls => `
+                            <div class="list-schedule-item">
+                                <span class="list-schedule-time">${formatTime(cls.begin)} - ${formatTime(cls.end)}</span>
+                                <span class="list-schedule-course">${cls.course}</span>
+                            </div>
+                        `).join('') : '<div style="text-align:center;color:#999;padding:20px;">No classes scheduled</div>'}
+                    </div>
+                </div>
+            `;
+        }
+
+        function openRoomDetails(roomNumber, building) {
+            currentModalRoom = roomNumber;
+            currentModalBuilding = building;
+            document.getElementById('modalTitle').textContent = `${building} ${roomNumber}`;
+            
+            const schedule = SCHEDULE_DATA[building]?.[currentDay]?.[roomNumber] || [];
             const modalSchedule = document.getElementById('modalSchedule');
             
             if (schedule.length === 0) {
@@ -901,9 +1010,8 @@
         }
 
         function exportToCalendar() {
-            const schedule = SCHEDULE_DATA[currentBuilding]?.[currentDay]?.[currentModalRoom] || [];
+            const schedule = SCHEDULE_DATA[currentModalBuilding]?.[currentDay]?.[currentModalRoom] || [];
             
-            // Find free time slots
             const freeSlots = [];
             const startOfDay = 700;
             const endOfDay = 2100;
@@ -911,25 +1019,21 @@
             if (schedule.length === 0) {
                 freeSlots.push({ begin: startOfDay, end: endOfDay });
             } else {
-                // Before first class
                 if (schedule[0].begin > startOfDay) {
                     freeSlots.push({ begin: startOfDay, end: schedule[0].begin });
                 }
                 
-                // Between classes
                 for (let i = 0; i < schedule.length - 1; i++) {
                     if (schedule[i].end < schedule[i + 1].begin) {
                         freeSlots.push({ begin: schedule[i].end, end: schedule[i + 1].begin });
                     }
                 }
                 
-                // After last class
                 if (schedule[schedule.length - 1].end < endOfDay) {
                     freeSlots.push({ begin: schedule[schedule.length - 1].end, end: endOfDay });
                 }
             }
             
-            // Filter by duration
             const validSlots = freeSlots.filter(slot => {
                 const duration = Math.floor((slot.end - slot.begin) / 100) * 60 + (slot.end % 100) - (slot.begin % 100);
                 return duration >= selectedDuration;
@@ -940,13 +1044,12 @@
                 return;
             }
             
-            // Generate ICS file
             const icsContent = generateICS(validSlots);
             const blob = new Blob([icsContent], { type: 'text/calendar' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `${currentBuilding}-${currentModalRoom}-free-times.ics`;
+            a.download = `${currentModalBuilding}-${currentModalRoom}-free-times.ics`;
             a.click();
             URL.revokeObjectURL(url);
         }
@@ -955,7 +1058,6 @@
             const now = new Date();
             const dayIndex = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].indexOf(currentDay);
             
-            // Calculate next occurrence of this day
             const currentDayIndex = now.getDay();
             let daysUntilTarget = dayIndex + 1 - currentDayIndex;
             if (daysUntilTarget <= 0) daysUntilTarget += 7;
@@ -989,9 +1091,9 @@
                 ics += `DTSTAMP:${formatDate(now)}\r\n`;
                 ics += `DTSTART:${formatDate(startDate)}\r\n`;
                 ics += `DTEND:${formatDate(endDate)}\r\n`;
-                ics += `SUMMARY:${currentBuilding} ${currentModalRoom} - Available\r\n`;
-                ics += `DESCRIPTION:Free time slot in ${currentBuilding} Room ${currentModalRoom}\r\n`;
-                ics += `LOCATION:${currentBuilding} ${currentModalRoom}\r\n`;
+                ics += `SUMMARY:${currentModalBuilding} ${currentModalRoom} - Available\r\n`;
+                ics += `DESCRIPTION:Free time slot in ${currentModalBuilding} Room ${currentModalRoom}\r\n`;
+                ics += `LOCATION:${currentModalBuilding} ${currentModalRoom}\r\n`;
                 ics += 'END:VEVENT\r\n';
             });
             
